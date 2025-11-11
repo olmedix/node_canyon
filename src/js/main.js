@@ -1,7 +1,4 @@
-const protocol = location.protocol === "https:" ? "wss" : "ws";
-const WS_URL = `${protocol}://${location.hostname}:8080/ws`;
-const ws = new WebSocket(WS_URL);
-
+const ws = new WebSocket("wss://node-canyon.onrender.com/ws");
 
 
 let distanciaCm = 0;
