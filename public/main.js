@@ -42,7 +42,7 @@ AFRAME.registerComponent("cannon-shot", {
   schema: {
     zNear: { type: "number", default: -6 },
     zFar: { type: "number", default: -1 },
-    speedZ: { type: "number", default: 2.5 }, // m/s hacia Z
+    speedZ: { type: "number", default: 2 }, // m/s hacia Z
     up: { type: "number", default: 12 }, // m/s hacia arriba
     cooldown: { type: "number", default: 4000 }, // ms entre disparos
     auto: { type: "boolean", default: true },
