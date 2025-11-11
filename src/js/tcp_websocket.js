@@ -32,6 +32,22 @@ wss.on('connection', async (ws, req) => {
   ws.on('close', () => stop().catch(() => {}));
 });
 
+//debug
+server.on('request', async (req, res) => {
+  if (req.url === '/debug/last') {
+    try {
+      const last = await getLastData();
+      res.writeHead(200, {'Content-Type':'application/json'});
+      res.end(JSON.stringify(last ?? { message: 'No hay datos' }));
+      return;
+    } catch (e) {
+      res.writeHead(500, {'Content-Type':'application/json'});
+      res.end(JSON.stringify({ error: String(e) }));
+      return;
+    }
+  }
+});
+
 // --- Escuchar ---
 server.listen(PORT, '0.0.0.0', () => {
   console.log(`HTTP:  http://0.0.0.0:${PORT}/health`);
