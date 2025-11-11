@@ -1,4 +1,7 @@
-const ws = new WebSocket("ws://192.168.1.147:8080/ws");
+const WS_URL = "ws://192.168.1.147:8080/ws";
+
+const ws = new WebSocket(WS_URL);
+
 
 let distanciaCm = 0;
 const MAX_CM_DEPTH = 40;
@@ -11,9 +14,10 @@ const basket = document.getElementById("basket");
 
 ws.onopen = () => console.log("✅ Conectado\n");
 ws.onmessage = (e) => {
-  const data = JSON.parse(e.data);
-  distanciaCm = data.data.d;
+  const { distancia, time } = JSON.parse(e.data);
+  distanciaCm = distancia;
 };
+
 ws.onclose = () => console.log("❌ Cerrado\n");
 
 function clamp(v, lo, hi) {
