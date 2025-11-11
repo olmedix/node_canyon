@@ -14,6 +14,7 @@ ws.onopen = () => console.log("✅ Conectado\n");
 ws.onmessage = (e) => {
   const { distancia, time } = JSON.parse(e.data);
   distanciaCm = distancia;
+  console.log(`Distancia: ${distanciaCm} cm`);
 };
 
 ws.onclose = () => console.log("❌ Cerrado\n");
