@@ -1,6 +1,7 @@
-const WS_URL = "ws://192.168.1.147:8080/ws";
-
+const protocol = location.protocol === "https:" ? "wss" : "ws";
+const WS_URL = `${protocol}://${location.hostname}:8080/ws`;
 const ws = new WebSocket(WS_URL);
+
 
 
 let distanciaCm = 0;

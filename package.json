@@ -5,8 +5,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "nodemon --watch src --ext js --exec node -r dotenv/config src/tcp_websocket.js",
-    "start": "node -r dotenv/config src/tcp_websocket.js"
+    "dev": "nodemon --watch src/js --ext js --exec node -r dotenv/config src/js/tcp_websocket.js",
+    "start": "node -r dotenv/config src/js/tcp_websocket.js"
   },
   "keywords": [],
   "author": "",
