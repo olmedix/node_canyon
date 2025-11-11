@@ -37,10 +37,12 @@ server.on('request', async (req, res) => {
   if (req.url === '/debug/last') {
     try {
       const last = await getLastData();
+      console.log('Debug last data request:', last);
       res.writeHead(200, {'Content-Type':'application/json'});
       res.end(JSON.stringify(last ?? { message: 'No hay datos' }));
       return;
     } catch (e) {
+      console.error('Error en /debug/last:', e);
       res.writeHead(500, {'Content-Type':'application/json'});
       res.end(JSON.stringify({ error: String(e) }));
       return;
