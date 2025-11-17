@@ -27,7 +27,6 @@
 
       <!-- PAREDES Y SUELO-->
       <a-plane
-       
         rotation="-90 0 0"
         width="8"
         height="24"
@@ -43,25 +42,20 @@
         color="green"
         position="4 0 -5"
       >
-    <!-- HUD del marcador -->
-     <a-entity position="-2 0.8 0">
-        <a-text
-          value="Score: "
-          color="#fff"
-          width="14"
-          align="left"
-        ></a-text>
-      </a-entity>
-      <a-entity id="scoreHud" position="0 0.8 0">
-        <a-text
-          id="scoreText"
-          value="0"
-          color="#fff"
-          width="14"
-          align="left"
-        ></a-text>
-      </a-entity>
-    </a-plane>
+        <!-- HUD del marcador -->
+        <a-entity position="-2 0.8 0">
+          <a-text value="Score: " color="#fff" width="14" align="left"></a-text>
+        </a-entity>
+        <a-entity id="scoreHud" position="0 0.8 0">
+          <a-text
+            id="scoreText"
+            value="0"
+            color="#fff"
+            width="14"
+            align="left"
+          ></a-text>
+        </a-entity>
+      </a-plane>
 
       <a-plane
         rotation="0 90 0"
@@ -150,7 +144,5 @@
         </a-entity>
       </a-entity>
     </a-scene>
-
-
   </body>
 </html>
